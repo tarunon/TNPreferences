@@ -6,11 +6,17 @@
 //  Copyright (c) 2014年 tarunon. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface TNDefaultsWrapper : NSObject
+@interface TNPreferences : NSObject
 
-+ (instancetype)sharedWrapper;
++ (instancetype)sharedPreferences;
+
+/**
+ *  Use standard NSUserDefaults or set key value store.
+ */
+- (void)setUserDefaults:(NSUserDefaults *)defaults;
+- (void)setUbiquityStore:(NSUbiquitousKeyValueStore *)store;
 
 /**
  *  You set any key in NSUserDefaults for the property.
