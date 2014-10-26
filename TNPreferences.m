@@ -95,7 +95,7 @@ static NSInteger getDefaultsInteger(TNPreferences *_self, SEL aSelector)
     if (_self.defaults) {
         return [_self.defaults integerForKey:[_self keyForSelector:aSelector]];
     } else {
-        return [_self.store longLongForKey:[_self keyForSelector:aSelector]];
+        return (NSInteger)[_self.store longLongForKey:[_self keyForSelector:aSelector]];
     }
 }
 
@@ -108,21 +108,21 @@ static void setDefaultsInteger(TNPreferences *_self, SEL aSelector, NSInteger va
     }
 }
 
-static double getDefaultsDouble(TNPreferences *_self, SEL aSelector)
+static CGFloat getDefaultsFloat(TNPreferences *_self, SEL aSelector)
 {
     if (_self.defaults) {
-        return [_self.defaults doubleForKey:[_self keyForSelector:aSelector]];
+        return [_self.defaults floatForKey:[_self keyForSelector:aSelector]];
     } else {
-        return [_self.store doubleForKey:[_self keyForSelector:aSelector]];
+        return (CGFloat)[_self.store doubleForKey:[_self keyForSelector:aSelector]];
     }
 }
 
-static void setDefaultsDouble(TNPreferences *_self, SEL aSelector, double value)
+static void setDefaultsFloat(TNPreferences *_self, SEL aSelector, CGFloat value)
 {
     if (_self.defaults) {
-        [_self.defaults setDouble:value forKey:[_self keyForSelector:aSelector]];
+        [_self.defaults setFloat:value forKey:[_self keyForSelector:aSelector]];
     } else {
-        [_self.store setDouble:value forKey:[_self keyForSelector:aSelector]];
+        [_self.store setDouble:(double)value forKey:[_self keyForSelector:aSelector]];
     }
 }
 
@@ -156,8 +156,8 @@ static void setDefaultsDouble(TNPreferences *_self, SEL aSelector, double value)
             getIMP = (IMP)getDefaultsInteger;
             setIMP = (IMP)setDefaultsInteger;
         } else if (!strcmp(type, @encode(CGFloat))) {
-            getIMP = (IMP)getDefaultsDouble;
-            setIMP = (IMP)setDefaultsDouble;
+            getIMP = (IMP)getDefaultsFloat;
+            setIMP = (IMP)setDefaultsFloat;
         } else {
             getIMP = (IMP)getDefaultsObject;
             setIMP = (IMP)setDefaultsObject;
