@@ -1,9 +1,9 @@
 #TNPreferences
 
 ##使い方
-NSUserDefaults, NSUbiquityKeyValueStoreのラッパークラス。
-TNPreferencesのサブクラスに設定したpropertyが永続化される。
-propertyの型はNSUserDefaultsに使用可能なNSObject、NSInteger、CGFloat、BOOLの何れか。
+NSUserDefaults, NSUbiquityKeyValueStoreのラッパークラス。  
+TNPreferencesのサブクラスに設定したpropertyが永続化される。  
+propertyの型はNSUserDefaultsに使用可能なNSObject、NSInteger、CGFloat、BOOLの何れか。  
 
 ##サンプル
 ```objc
