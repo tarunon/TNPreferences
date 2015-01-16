@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 tarunon. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface TNPreferences : NSObject
 
