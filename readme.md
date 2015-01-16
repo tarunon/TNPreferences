@@ -5,6 +5,11 @@ NSUserDefaults, NSUbiquityKeyValueStoreのラッパークラス。
 TNPreferencesのサブクラスに設定したpropertyが永続化される。  
 propertyの型はNSUserDefaultsに使用可能なNSObject、NSInteger、CGFloat、BOOLの何れか。  
 
+
+##Pod
+pod 'TNPreferences', :git => 'https://github.com/tarunon/TNPreferences.git'
+
+
 ##サンプル
 ```objc
 
