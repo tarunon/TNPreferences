@@ -1,16 +1,16 @@
 #TNPreferences
 
-##使い方
-NSUserDefaults, NSUbiquityKeyValueStoreのラッパークラス。  
-TNPreferencesのサブクラスに設定したpropertyが永続化される。  
-propertyの型はNSUserDefaultsに使用可能なNSObject、NSInteger、CGFloat、BOOLの何れか。  
+TNPreferences is wrapper class for NSUserDefaults and NSUbiquityKeyValueStore
 
+##How to
+- Make subclass for TNPreferences.
+- Define property. Supports NSInteger, CGFloat, BOOL and NSObject implemented NSCoding.
 
 ##Pod
 pod 'TNPreferences', :git => 'https://github.com/tarunon/TNPreferences.git'
 
 
-##サンプル
+##Sample
 ```objc
 
 @interface SamplePreferences : TNPreferences
